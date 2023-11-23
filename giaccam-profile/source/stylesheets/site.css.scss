@@ -1,13 +1,26 @@
-// html {
-//   height: 100% !important;
-// }
-
 body {
   background: rgb(39,0,93);
   background: radial-gradient(circle, rgba(39,0,93,1) 0%, rgba(25,24,37,1) 100%);
   font-family: 'Inter', sans-serif;
+  padding: 10px 10px 10px 10px;
   width: 100%;
   min-height: 100vh;
+}
+
+.navbar-top {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .main-title {
@@ -16,6 +29,11 @@ body {
   font-size: 150px;
   font-weight: 600;
   letter-spacing: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .sliding-title {
