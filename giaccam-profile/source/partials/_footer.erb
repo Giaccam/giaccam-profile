@@ -4,6 +4,7 @@
     <%= link_to '<i class="fa-brands fa-linkedin mx-2" style="color: #ffffff;"></i>', 'https://www.linkedin.com/in/camisassagiacomo/', target: :_blank %>
   </div>
   <p class="nav-item">
-    <a class="nav-link navbar-link-text" href="#">Contact</a>
+    <%= mail_to 'giacomo@camisassa.com', "Contact", cc: 'web@camisassa.com', class: "nav-link navbar-link-text" %>
+    <%# <a class="nav-link navbar-link-text" href="#">Contact</a> %>
   </p>
 </nav>

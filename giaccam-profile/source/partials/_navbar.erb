@@ -1,6 +1,10 @@
 <nav class="navbar navbar-top">
   <p class="navbar-brand navbar-logo-text"> giaccam. </p>
   <p class="nav-item">
-    <a class="nav-link navbar-link-text" href="#">About</a>
+    <% if current_page.data.title == "Home"%>
+      <%= link_to 'About', '/about.html', class: "nav-link navbar-link-text" %>
+    <% else %>
+      <%= link_to 'Home', '/index.html', class: "nav-link navbar-link-text" %>
+    <% end %>
   </p>
 </nav>
