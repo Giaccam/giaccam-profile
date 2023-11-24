@@ -1,11 +1,15 @@
+//////////////////////////////////////////////////////////////// Layout
+
 body {
   background: rgb(39,0,93);
   background: radial-gradient(circle, rgba(39,0,93,1) 0%, rgba(25,24,37,1) 100%);
   font-family: 'Inter', sans-serif;
   padding: 10px 10px 10px 10px;
-  width: 100%;
-  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
+
+//////////////////////////////////////////////////////////////// Navbar & Footer
 
 .navbar-top {
   position: relative;
@@ -17,34 +21,10 @@ body {
 
 .footer-bottom {
   position: absolute;
-  bottom: 0;
+  bottom: 0; left: 0; right: 0;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.main-title {
-  color: white;
-  text-align: center;
-  font-size: 150px;
-  font-weight: 600;
-  letter-spacing: 0px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.sliding-title {
-  color: white;
-  text-align: center;
-  font-size: 70px;
-  font-weight: 400;
-  letter-spacing: 0px;
-  padding-left: 15px;
-  padding-right: 15px;
-  white-space: nowrap;
 }
 
 .navbar-logo-text {
@@ -55,7 +35,7 @@ body {
   pointer-events: none;
 }
 
-.navbar-link-text {
+.navigation-link-text {
   color: #dadada;
   font-size: 15px;
   font-weight: 300;
@@ -63,27 +43,93 @@ body {
   text-decoration: none;
 }
 
-.navbar-link-text:hover {
+.navigation-link-text:hover {
   color: white;
 }
 
-//////////////////////////////////////////////////////////////// Animation
+//////////////////////////////////////////////////////////////// Home
+
+.main-title {
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // -ms-transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
+}
+
+//////////////////////////////////////////////////////////////// About
+
+.sliding-title {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  text-align: center;
+  font-size: 180px;
+  font-weight: 300;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+.about-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0px;
+  pointer-events: none;
+}
+
+.about-text-container {
+  margin-top: -200px;
+  margin-bottom: 150px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/////////////////////////////// Image filter
+
+.profile-img {
+  position: relative;
+  z-index: 1;
+  height: auto;
+  max-width: 80%;
+  border-radius: 6% 6% 6% 6%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+@media (max-width: 1250px) {
+  .profile-img {
+    display: none;
+  }
+  .animation-about-me {
+    display: none;
+  }
+}
+
+/////////////////////////////// Animation
 
 .marquee {
   margin: 0 auto;
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
+  right: 0;
+  left: 0;
 }
 
-.marquee span {
+.marquee h1 {
   display: inline-block;
   padding-left: 100%;
-  animation: marquee 20s linear infinite;
+  animation: marquee 36s linear infinite;
 }
 
-.marquee2 span {
-  animation-delay: 10s;
+.marquee2 h1 {
+  animation-delay: 18s;
 }
 
 @keyframes marquee {

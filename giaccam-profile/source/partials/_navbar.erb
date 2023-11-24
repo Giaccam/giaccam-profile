@@ -1,10 +1,10 @@
-<nav class="navbar navbar-top">
-  <p class="navbar-brand navbar-logo-text"> giaccam. </p>
-  <p class="nav-item">
+<header>
+  <div class="d-flex justify-content-between mb-5">
+    <p class="navbar-logo-text">giaccam.</p>
     <% if current_page.data.title == "Home"%>
-      <%= link_to 'About', '/about.html', class: "nav-link navbar-link-text" %>
+      <%= link_to 'About', '/about.html', class: "nav-link navigation-link-text" %>
     <% else %>
-      <%= link_to 'Home', '/index.html', class: "nav-link navbar-link-text" %>
+      <%= link_to 'Home', '/index.html', class: "nav-link navigation-link-text" %>
     <% end %>
-  </p>
-</nav>
+  </div>
+</header>
