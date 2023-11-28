@@ -4,10 +4,22 @@ body {
   background: rgb(39,0,93);
   background: radial-gradient(circle, rgba(39,0,93,1) 0%, rgba(25,24,37,1) 100%);
   font-family: 'Inter', sans-serif;
-  padding: 10px 10px 10px 10px;
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.flex-container {
+  height: 100vh; //TODO: check why is not working with 100%? and only 100vh?
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container-navbar, .flex-container-footer {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 20px 20px 20px 20px;
 }
 
 //////////////////////////////////////////////////////////////// Navbar & Footer
@@ -18,6 +30,7 @@ body {
   font-weight: 600;
   letter-spacing: 0px;
   pointer-events: none;
+  margin-bottom: 0;
 }
 
 .navigation-link-text {
@@ -34,22 +47,52 @@ body {
 
 //////////////////////////////////////////////////////////////// Home
 
+.flex-container-body {
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-title {
   color: white;
   text-align: center;
   font-size: 150px;
   font-weight: 600;
   letter-spacing: 0px;
-  margin-top: 50vh;
-  margin-bottom: 50vh;
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // -ms-transform: translate(-50%, -50%);
-  // transform: translate(-50%, -50%);
 }
 
 //////////////////////////////////////////////////////////////// About
+
+.flex-container-about {
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  padding: 30px 30px 30px 50px;
+}
+
+.flex-container-paragraph {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-container-profile-img {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 .sliding-title {
   color: transparent;
@@ -68,22 +111,12 @@ body {
   font-weight: 200;
   letter-spacing: 0px;
   pointer-events: none;
+  padding-left: 60px;
 }
-
-.about-text-container {
-  margin-top: -200px;
-  margin-bottom: 150px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-/////////////////////////////// Image filter
 
 .profile-img {
-  position: relative;
-  z-index: 1;
   height: auto;
-  max-width: 80%;
+  max-width: 60%;
   border-radius: 6% 6% 6% 6%;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
@@ -95,6 +128,9 @@ body {
   }
   .animation-about-me {
     display: none;
+  }
+  .about-text-container {
+    margin: auto;
   }
 }
 
