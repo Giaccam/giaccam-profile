@@ -1,13 +1,21 @@
 //////////////////////////////////////////////////////////////// Layout
 
 body {
-  background: rgb(39,0,93);
-  background: radial-gradient(circle, rgba(39,0,93,1) 0%, rgba(25,24,37,1) 100%);
   font-family: 'Inter', sans-serif;
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  // background pattern
+  --dot-bg: rgb(18, 0, 43);
+  --dot-color: #503d85;
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
 }
+
 
 .flex-container {
   height: 100vh; //TODO: check why is not working with 100%? and only 100vh?
@@ -25,7 +33,7 @@ body {
 //////////////////////////////////////////////////////////////// Navbar & Footer
 
 .navbar-logo-text {
-  color: white;
+  color: #c8c7c7;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0px;
@@ -34,7 +42,7 @@ body {
 }
 
 .navigation-link-text {
-  color: #dadada;
+  color: #c8c7c7;
   font-size: 15px;
   font-weight: 300;
   letter-spacing: 0px;
@@ -57,7 +65,10 @@ body {
 }
 
 .main-title {
-  color: white;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   font-size: 150px;
   font-weight: 600;
@@ -94,19 +105,20 @@ body {
   align-items: flex-start;
 }
 
-.sliding-title {
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-  text-align: center;
-  font-size: 180px;
-  font-weight: 300;
+.about-title {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 80px;
+  font-weight: 600;
   letter-spacing: 0px;
-  white-space: nowrap;
+  pointer-events: none;
+  margin-bottom: 80px;
 }
 
 .about-text {
-  color: white;
+  color: #c8c7c7;
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 0px;
@@ -122,44 +134,22 @@ body {
   filter: grayscale(100%);
 }
 
-@media (max-width: 1250px) {
-  .profile-img {
-    display: none;
-  }
-  .animation-about-me {
-    display: none;
-  }
-  .about-text-container {
-    margin: auto;
-  }
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+
 }
 
-/////////////////////////////// Animation
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
 
-.marquee {
-  margin: 0 auto;
-  white-space: nowrap;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  left: 0;
 }
 
-.marquee h1 {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 36s linear infinite;
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+
 }
 
-.marquee2 h1 {
-  animation-delay: 18s;
-}
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
 
-@keyframes marquee {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
 }
